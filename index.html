@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP 6 | Calculatrice et Introduction PHP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1> Mini-Calculatrice Dynamique</h1>
+        <nav>
+            <a href="info.php" target="_blank">Introduction PHP</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="calculator-app">
+            <h2>Effectuer un Calcul</h2>
+            
+            <form id="calculator-form">
+                
+                <div class="form-group">
+                    <label for="numA">Nombre A :</label>
+                    <input type="number" id="numA" required step="any" placeholder="Entrez le premier nombre">
+                </div>
+
+                <div class="form-group">
+                    <label for="operation">Opération :</label>
+                    <select id="operation" required>
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">×</option>
+                        <option value="/">÷</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="numB">Nombre B :</label>
+                    <input type="number" id="numB" required step="any" placeholder="Entrez le second nombre">
+                </div>
+                
+                <button type="submit" id="calculate-btn">Calculer</button>
+            </form>
+
+            <div id="error-message" class="error-zone"></div>
+        </section>
+
+        <section id="history-section" class="card">
+            <h2> Historique des Opérations</h2>
+            <ul id="history-list">
+                <li class="empty-message">Aucune opération effectuée.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; TP 6 - Développement Web Avancé</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

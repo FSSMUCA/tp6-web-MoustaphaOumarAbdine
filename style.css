@@ -1,0 +1,154 @@
+/* Variables et Réinitialisation de Base */
+:root {
+    --primary: #007BFF;
+    --secondary: #6c757d;
+    --bg: #f8f9fa;
+    --surface: #ffffff;
+    --error: #dc3545;
+    --radius: 8px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--bg);
+    line-height: 1.6;
+    color: #333;
+}
+
+/* En-tête */
+header {
+    background-color: var(--primary);
+    color: var(--surface);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header a {
+    color: var(--surface);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+header a:hover {
+    color: #ffd700;
+}
+
+/* Mise en page principale (CSS Grid + Responsive) */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr; /* Par défaut: une colonne */
+    gap: 30px;
+}
+
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: 2fr 1fr; /* Deux colonnes sur grand écran */
+    }
+}
+
+/* Style des cartes (Historique) */
+.card {
+    background-color: var(--surface);
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Formulaire et Entrées */
+#calculator-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.form-group input, .form-group select {
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: var(--radius);
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+/* Bouton */
+#calculate-btn {
+    background-color: var(--primary);
+    color: var(--surface);
+    border: none;
+    padding: 12px 20px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s;
+}
+
+#calculate-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Zone d'Erreurs */
+.error-zone {
+    padding: 10px;
+    border-radius: var(--radius);
+    margin-top: 15px;
+    display: none; /* Affiché par JS */
+    font-weight: bold;
+    /* Styles par défaut pour l'erreur */
+    color: var(--error);
+    background-color: #f8d7da;
+    border: 1px solid var(--error);
+}
+
+/* Historique */
+#history-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+#history-list li {
+    background-color: #f1f1f1;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-left: 5px solid var(--secondary);
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+#history-list li:hover {
+    background-color: #e2e6ea;
+}
+
+.empty-message {
+    font-style: italic;
+    color: var(--secondary);
+    text-align: center;
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #343a40;
+    color: var(--surface);
+    margin-top: 20px;
+}
